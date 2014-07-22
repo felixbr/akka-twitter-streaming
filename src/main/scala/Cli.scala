@@ -23,5 +23,5 @@ object Cli extends App with BootedCore with CoreActors {
     }
 
     //commandLoop()
-    tweetStreamerActor ! StartStreaming("fuck")
+    tweetStreamerActor ! StartStreaming("lol")
 }
