@@ -8,11 +8,11 @@ object TweetProcessorActor {
 
 }
 
-class TweetProcessorActor extends Actor with TweetSet with AerospikeConnection{
+class TweetProcessorActor extends Actor {
     def receive = {
         case tweet: Tweet =>
             println(tweet.text)
 
-            tweets.put(tweet.id, tweet.text).run
+            TweetSet.create(tweet)
     }
 }
