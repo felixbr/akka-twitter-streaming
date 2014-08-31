@@ -3,11 +3,11 @@ package core
 import akka.actor.ActorSystem
 
 trait Core {
-    implicit def system: ActorSystem
+  implicit def system: ActorSystem
 }
 
 trait BootedCore extends Core {
-    implicit lazy val system = ActorSystem("akka-twitter-streaming")
+  implicit lazy val system = ActorSystem("akka-twitter-streaming")
 
-    sys.addShutdownHook(system.shutdown())
+  sys.addShutdownHook(system.shutdown())
 }

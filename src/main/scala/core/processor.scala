@@ -9,10 +9,10 @@ object TweetProcessorActor {
 }
 
 class TweetProcessorActor extends Actor {
-    def receive = {
-        case tweet: Tweet =>
-            println(tweet.text)
+  def receive = {
+    case tweet: Tweet =>
+      println(tweet.text)
 
-            TweetSet.create(tweet)
-    }
+      TweetSet.create(tweet)
+  }
 }
